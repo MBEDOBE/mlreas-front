@@ -53,7 +53,7 @@ const AddPatientModal = ({ open, handleOpen, onPatientAdded }) => {
     e.preventDefault();
     try {
       // Send request to add patient
-      await axios.post("http://localhost:8000/api/patients", formData, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/patients`, formData, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       alert("Patient added successfully");
