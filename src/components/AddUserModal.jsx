@@ -25,7 +25,7 @@ const AddUserModal = ({ open, handleOpen, onUserAdded }) => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/users`, formData, {
+      await axios.post("https://mlreas-api.onrender.com/api/users", formData, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }, // Corrected
       });
       alert("User added successfully");
