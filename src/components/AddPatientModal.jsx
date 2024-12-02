@@ -29,7 +29,7 @@ const AddPatientModal = ({ open, handleOpen, onPatientAdded }) => {
     const fetchDoctors = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/users`,
+          "https://mlreas-api.onrender.com/api/users",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -53,7 +53,7 @@ const AddPatientModal = ({ open, handleOpen, onPatientAdded }) => {
     e.preventDefault();
     try {
       // Send request to add patient
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/patients`, formData, {
+      await axios.post("https://mlreas-api.onrender.com/api/patients", formData, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       alert("Patient added successfully");
