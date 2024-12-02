@@ -28,7 +28,7 @@ const DoctorDashboard = () => {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/patients`, {
+        const res = await axios.get("https://mlreas-api.onrender.com/api/patients", {
           headers: { Authorization: `Bearer ${auth.token}` },
         });
         setPatients(res.data);
@@ -37,7 +37,7 @@ const DoctorDashboard = () => {
         for (const patient of res.data) {
           try {
             const labRes = await axios.get(
-              `${process.env.REACT_APP_API_URL}/api/labresults/patient/${patient._id}`,
+              "https://mlreas-api.onrender.com/api/labresults/patient/${patient._id}",
               {
                 headers: { Authorization: `Bearer ${auth.token}` },
               }
@@ -66,7 +66,7 @@ const DoctorDashboard = () => {
   const fetchCriticalAlerts = async () => {
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/labresults/critical-alerts`,
+        "https://mlreas-api.onrender.com/api/labresults/critical-alerts",
         {
           headers: { Authorization: `Bearer ${auth.token}` },
         }
@@ -81,7 +81,7 @@ const DoctorDashboard = () => {
     try {
       setSelectedPatient(patientId);
       const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/labresults/patient/${patientId}`,
+        "https://mlreas-api.onrender.com/api/labresults/patient/${patientId}",
         {
           headers: { Authorization: `Bearer ${auth.token}` },
         }
@@ -102,7 +102,7 @@ const DoctorDashboard = () => {
   const markResultAsResolved = async (labResultId) => {
     try {
       await axios.patch(
-        `${process.env.REACT_APP_API_URL}/api/labresults/resolve/${labResultId}`,
+        "https://mlreas-api.onrender.com/api/labresults/resolve/${labResultId}",
         null,
         {
           headers: { Authorization: `Bearer ${auth.token}` },
