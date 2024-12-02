@@ -27,7 +27,7 @@ const AddLabResult = () => {
     const fetchPatients = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/patients`,
+          "https://mlreas-api.onrender.com/api/patients",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -48,7 +48,7 @@ const AddLabResult = () => {
     const fetchTestTypes = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/thresholds`,
+          "https://mlreas-api.onrender.com/api/thresholds",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -76,7 +76,7 @@ const AddLabResult = () => {
   const confirmSubmission = async () => {
     try {
       await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/labresults`,
+        "https://mlreas-api.onrender.com/api/labresults",
         formData,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
