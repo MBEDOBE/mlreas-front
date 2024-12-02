@@ -83,7 +83,7 @@ const AdminDashboard = () => {
     const fetchThresholds = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/threshold`,
+          `${process.env.REACT_APP_API_URL}/api/thresholds`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -104,7 +104,7 @@ const AdminDashboard = () => {
   const handleThresholdSubmit = async () => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/threshold`,
+        `${process.env.REACT_APP_API_URL}/api/thresholds`,
         formData,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
