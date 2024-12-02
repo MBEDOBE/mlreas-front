@@ -63,7 +63,7 @@ export default function Login() {
       const data = new FormData(event.currentTarget);
       try {
         const response = await axios.post(
-          `${process.env.REACT_APP_API_URL}/api/auth/login`,
+          "https://mlreas-api.onrender.com/api/auth/login",
           {
             email: data.get("email"),
             password: data.get("password"),
