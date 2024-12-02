@@ -27,7 +27,7 @@ const LabTechnicianDashboard = () => {
   useEffect(() => {
     const fetchLabResults = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/labresults", {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/labresults`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setLabResults(res.data);
