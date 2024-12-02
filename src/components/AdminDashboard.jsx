@@ -49,7 +49,7 @@ const AdminDashboard = () => {
     const fetchUsers = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/users`,
+          "https://mlreas-api.onrender.com/api/users",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
     const fetchPatients = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/patients`,
+          "https://mlreas-api.onrender.com/api/patients",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
     const fetchThresholds = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/thresholds`,
+          "https://mlreas-api.onrender.com/api/thresholds",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -104,7 +104,7 @@ const AdminDashboard = () => {
   const handleThresholdSubmit = async () => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/thresholds`,
+        "https://mlreas-api.onrender.com/api/thresholds",
         formData,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
